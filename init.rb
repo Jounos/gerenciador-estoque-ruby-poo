@@ -5,19 +5,19 @@ require_relative "core/listar_produtos"
 require_relative "core/retirar_estoque"
 
 produtos = [
-	{
-		id: 1,
-		nome: "Maçã",
-		descricao: "Maçã da turma da mônica",
-		preco: 2.5,
-		quantidade: 20
-	},
-	{
-		id: 2,
-		nome: "Banana",
-		descricao: "Banana nanica",
-		preco: 1.5,
-		quantidade: 30
-	}
+  {
+    id: 1,
+    nome: "Maçã",
+    descricao: "Maçã da turma da mônica",
+    preco: 2.5,
+    quantidade: 20,
+  },
+  {
+    id: 2,
+    nome: "Banana",
+    descricao: "Banana nanica",
+    preco: 1.5,
+    quantidade: 30,
+  },
 ]
 iniciar_menu(produtos)
