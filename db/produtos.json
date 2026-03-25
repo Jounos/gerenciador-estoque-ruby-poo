@@ -4,7 +4,7 @@
     "nome": "Maçã",
     "descricao": "Maçã da turma da mônica",
     "preco": 2.5,
-    "quantidade": 20
+    "quantidade": 10
   },
   {
     "id": 2,
@@ -26,5 +26,12 @@
     "descricao": "Pé de pera",
     "preco": 2.5,
     "quantidade": 2
+  },
+  {
+    "id": 1774468990,
+    "nome": "Melancia",
+    "descricao": "docinha",
+    "preco": 20.0,
+    "quantidade": 1
   }
 ]

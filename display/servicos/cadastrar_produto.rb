@@ -1,4 +1,4 @@
-def cadastrar_produto
+def cadastrar_produto(servico)
   mensagem("Iniciando cadastro de produto...", true, true, 0.5)
   mensagem_azul("Digite o nome do produto: ", false, false)
   nome = gets.chomp
@@ -25,7 +25,7 @@ def cadastrar_produto
     "quantidade" => quantidade,
   })
 
-  ProdutoServico.adicionar(p)
+  servico.adicionar(p)
 
   mensagem("o produto #{amarelo(nome)} foi cadastrado com sucesso!", true, true, 3)
 end

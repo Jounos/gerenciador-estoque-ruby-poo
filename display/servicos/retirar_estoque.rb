@@ -1,12 +1,12 @@
 require "terminal-table"
 
-def retirar_estoque
+def retirar_estoque(servico)
   limpar_tela
 
   mensagem_amarelo("================= Escolha um dos produtos abaixo =================", false, false)
   table = Terminal::Table.new do |t|
     t.headings = ["ID", "Nome", "Quantidade"]
-    ProdutoServico.todos.each do |produto|
+    servico.todos.each do |produto|
       t.add_row [produto.id, produto.nome, produto.quantidade]
     end
   end
@@ -16,7 +16,7 @@ def retirar_estoque
   mensagem_azul("Digite o ID do produto:", false, false)
   id = gets.to_i
 
-  produto = ProdutoServico.todos.find { |p| p.id == id }
+  produto = servico.todos.find { |p| p.id == id }
 
   unless produto
     limpar_tela
@@ -25,7 +25,7 @@ def retirar_estoque
     opcao = gets.chomp.downcase
     limpar_tela
     if opcao == "s" || opcao == "sim"
-      retirar_estoque
+      retirar_estoque servico
     end
     return
   end
@@ -36,8 +36,8 @@ def retirar_estoque
   quantidade_retirada = gets.to_i
   produto.quantidade = produto.quantidade - quantidade_retirada
 
-    ProdutoServico.atualizar(produto)
+  servico.atualizar(produto)
 
   mensagem_verde("Retirada realizada com sucesso", false, false)
-  listar_produtos
+  listar_produtos servico
 end

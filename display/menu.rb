@@ -1,4 +1,7 @@
 def iniciar_menu
+  # servico = ProdutoServico.new(CsvRepositorio, "db/produtos.csv")
+  servico = ProdutoServico.new(JsonRepositorio, "db/produtos.json")
+
   loop do
     mensagem_amarelo("================= Escolha uma das opções abaixo =================", false, false)
     mensagem_azul("#{vermelho("1")} - Cadastro de produtos", false, false)
@@ -10,11 +13,11 @@ def iniciar_menu
 
     case opcao
     when 1
-      cadastrar_produto
+      cadastrar_produto servico
     when 2
-      listar_produtos
+      listar_produtos servico
     when 3
-      retirar_estoque
+      retirar_estoque servico
     when 4
       limpar_tela
       exit
