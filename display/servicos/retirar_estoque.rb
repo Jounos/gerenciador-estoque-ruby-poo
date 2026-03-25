@@ -35,6 +35,9 @@ def retirar_estoque
   mensagem_verde("Quantidade atual: #{amarelo(produto.quantidade)}", false, false)
   quantidade_retirada = gets.to_i
   produto.quantidade = produto.quantidade - quantidade_retirada
+
+    ProdutoServico.atualizar(produto)
+
   mensagem_verde("Retirada realizada com sucesso", false, false)
   listar_produtos
 end

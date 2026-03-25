@@ -20,9 +20,12 @@ class JsonRepositorio
   def self.adicionar(arquivo, obj)
     data = ler(arquivo) || []
     data << obj
+    self.gravar(arquivo, data)
+  end
 
-    File.open(arquivio, "w") do |file|
-      file.puts JSON.pretty_generate(data)
+  def self.gravar(arquivo, array)
+    File.open(arquivo, "w") do |file|
+      file.puts JSON.pretty_generate(array)
     end
   end
 end

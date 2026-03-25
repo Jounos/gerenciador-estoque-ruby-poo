@@ -18,11 +18,11 @@ def cadastrar_produto
   limpar_tela
 
   p = Produto.new({
-    id: Time.now.to_i,
-    nome: nome,
-    descricao: descricao,
-    preco: preco,
-    quantidade: quantidade,
+    "id" => Time.now.to_i,
+    "nome" => nome,
+    "descricao" => descricao,
+    "preco" => preco,
+    "quantidade" => quantidade,
   })
 
   ProdutoServico.adicionar(p)
